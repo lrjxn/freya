@@ -1,0 +1,313 @@
+body{
+    &.home{
+        padding-top: 0;
+        h2{
+            margin-bottom: 92px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+    }
+}
+.page_banner{
+        padding-bottom: 26.8%;
+    }
+    &.rect{
+        &:after{
+            content: "";
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            display: block;
+            width: 8px;
+            height: 8px;
+            background-color: $black;
+            transform: translateX(-50%) translateY(-50%) rotate(45deg);
+        }
+        &.large{
+            &:after{
+                width: 14px;
+                height: 14px;
+            }
+        }
+}
+
+/* Menu Template */
+#content.menu_template{
+    .menu_links_container{
+        margin-left: -38px;
+        margin-right: -38px;
+        .menu_links{
+            padding: 0 42px;
+            background-color: $lightBlue;
+            a,
+            span{
+                position: relative;
+                display: inline-block;
+                margin-right: 62px;
+                padding: 24px 0;
+                line-height: 20px;
+                color: inherit;
+                text-decoration: none;
+                text-transform: uppercase;
+                cursor: pointer;
+                &:before{
+                    content: "";
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    display: block;
+                    width: 5px;
+                    height: 5px;
+                    background-color: $black;
+                    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+                    opacity: 0;
+                    transition: opacity 0.15s linear;
+                }
+                &:hover{
+                    color: inherit;
+                }
+                &:hover,
+                &.active{
+                    &:before{
+                        opacity: 1;
+                    }
+                }
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    .menu_links_fixed{
+        display: none;
+        position: fixed;
+        top: 81px;
+        left: 0;
+        width: 100%;
+        z-index: 5;
+    }
+    .page_banner{
+        margin-bottom: 44px;
+        .menu_links{
+            transform: translateY(-50%);
+        }
+    }
+    .menu{
+        margin-bottom: 70px;
+        .col{
+            padding: 0;
+        }
+        .category{
+            margin-bottom: 52px;
+            h4{
+                margin-bottom: 20px;
+                @extend %fnt-s30;
+                letter-spacing: 2px;
+                font-weight: 500;
+            }
+            .item{
+                .name{
+                    max-width: 772px;
+                    margin-right: 24px;
+                    p{
+                        line-height: 27px;
+                        b,
+                        strong{
+                            font-size: 20px;
+                            font-weight: 500;
+                        }
+                    }
+                }
+                .price{
+                    @extend %fnt-s20;
+                    text-align: right;
+                }
+            }
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+        .menu_buttons{
+            margin-top: 70px;
+            .btn{
+                margin-right: 24px;
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+
+/* Parts */
+
+.front_mob_logos{
+    padding: 18px 24px;
+    background-color: $white;
+    position: relative;
+    width: 100%;
+    img{
+        &:nth-child(1){
+            width: 156px;
+            margin-right: 10px;
+        }
+        &:nth-child(2){
+            width: 177.17px;
+        }
+    }
+    &.front_mob_logo{
+        img{
+            width: 300px;
+        }
+    }
+}
+
+#cookies{
+    display: none;
+    position: fixed;
+    left: 19px;
+    bottom: 25px;
+    width: 100%;
+    max-width: 448px;
+    padding: 31px 68px 29px 25px;
+    background: $cookiesPopupBg;
+    z-index: 3;
+    .cookies_container{
+        width: 100%;
+        .cookies_text{
+            margin-bottom: 32px;
+            p{
+                margin: 0;
+                color: $white;
+                @extend %fnt-s16;
+            }
+        }
+        .cookies_checkboxes{
+            margin-bottom: 32px;
+            .checkbox_container{
+                display: block;
+                position: relative;
+                padding-left: 44px;
+                margin-bottom: 11px;
+                @extend %fnt-s14;
+                font-weight: normal;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                p{
+                    color: $white;
+                    margin: 0;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    @extend %fnt-s14;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                }
+                .checkmark{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 31px;
+                    width: 31px;
+                    background-color: transparent;
+                    border: 2px solid $white;
+                    border-radius: 0;
+                    &:after{
+                        content: "";
+                        position: absolute;
+                        display: none;
+                        top: 5px;
+                        left: 9px;
+                        width: 9px;
+                        height: 13px;
+                        border: solid $white;
+                        border-width: 0 2px 2px 0;
+                        border-radius: 0;
+                        -webkit-transform: rotate(45deg);
+                        -ms-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                    }
+                }
+                input{
+                    position: absolute;
+                    width: 0;
+                    height: 0;
+                    opacity: 0;
+                    visibility: hidden;
+                    cursor: pointer;
+                    &:checked ~ .checkmark{
+                        &:after{
+                            display: block;
+                        }
+                    }
+                    &:disabled ~ .checkmark{
+                        border-color: $lightBlue;
+                        &:after{
+                            border-color: $lightBlue;
+                        }
+                    }
+                    &:disabled ~ p{
+                        color: $lightBlue;
+                    }
+                }
+                &:not(.disabled) {
+                    cursor: pointer;
+                }
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .cookies_buttons{
+            span,
+            a{
+                margin-right: 27px;
+                color: $white;
+                @extend %fnt-s14;
+                text-transform: uppercase;
+                text-decoration: none;
+                cursor: pointer;
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+            .btn{
+                color: $darkGrayBtn;
+                background: $lightBlue;
+                border: none;
+                transition: 0.3s ease-in-out;
+                &:hover{
+                    color: $white;
+                    background: $darkGrayBtn;
+                }
+            }
+        }
+        #cookies_close{
+            position: absolute;
+            top: 12px;
+            right: 13px;
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+body.page-id-1040, body.page-id-1049, body.page-id-1047{
+    main{
+        .container{
+            .row{
+                .title{
+                    display:none;
+                }
+            }
+            .content{
+                .wp-block-columns{
+                    padding-top: 50px;
+                }
+            }
+        }
+    }
+}

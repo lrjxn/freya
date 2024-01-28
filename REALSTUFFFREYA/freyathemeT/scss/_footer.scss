@@ -1,0 +1,123 @@
+footer{
+    position: relative;
+    min-height: 100vh;
+    min-height: calc(100vh - 81px);
+    padding: 80px 0;
+    color: $champange;
+    background: $darkBlue;
+    .container{
+        max-width: 1204px;
+    }
+    .col{
+        position: relative;
+        &.left{
+            padding-bottom: 70px;
+            &:not(:last-child){
+                &:after{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 100%;
+                    display: block;
+                    width: 1px;
+                    height: 100%;
+                    background: $champange;
+                }
+            }
+        }
+        &.right{
+            padding-bottom: 70px;
+            text-align: right;
+        }  
+    }
+    a{
+        color: $champange;
+        &:hover{
+            color: $champange;
+        }
+    }
+    .btn{
+        text-transform: uppercase;
+    }
+    .col_header{
+        margin-bottom: 14px;
+        @extend %fnt-s20;
+        font-weight: 500;
+        line-height: 32px;
+    }
+    .contact,
+    .location{
+        margin-bottom: 14px;
+        @extend %fnt-s30;
+        font-weight: 500;
+        text-transform: uppercase;
+        a:hover{
+            text-decoration: underline;
+        }
+    }
+    .social_media{
+        margin-bottom: 10px;
+        img{
+            display: block;
+        }
+        a{
+            display: inline-block;
+            margin-right: 11px;
+            margin-bottom: 8px;
+            text-decoration: none;
+        }
+    }
+    .reservation_link{
+        margin-bottom: 24px;
+    }
+    .reservations_text{
+        max-width: 262px;
+        margin-bottom: 38px;
+        line-height: 25px;
+    }
+    .location{
+        margin-bottom: 20px;
+    }
+    .location_link{
+        margin-bottom: 28px;
+    }
+    .open_times{
+        margin-bottom: 14px;
+        @extend %fnt-s30;
+        font-weight: 500;
+    }
+    .other_restorants{
+        margin-bottom: 24px;
+        @extend %fnt-s15;
+        font-weight: 500;
+        line-height: 32px;
+    }
+    .footer_bottom{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        color: $green;
+        @extend %fnt-s15;
+        .col{
+            margin-bottom: 8px;
+        }
+        p{
+            margin: 0;
+            line-height: 32px;
+        }
+        .company_details{
+            .row{
+                margin-left: -10px;
+                margin-right: -10px;
+                .col{
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+            }
+        }
+        .copyright{
+            text-align: right;
+        }
+    }
+}

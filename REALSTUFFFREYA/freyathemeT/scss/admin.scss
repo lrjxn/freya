@@ -1,0 +1,15 @@
+.editor-styles-wrapper{
+    .wp-block{
+        max-width: 90%;
+    }
+    .acf-block-body{
+        .acf-block-preview{
+            @import 'fonts';
+            @import 'const/reboot';
+            @import 'const/grid';
+            @import 'general';
+            @import 'blocks';
+            min-height: 50px;
+        }
+    }
+}

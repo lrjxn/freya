@@ -1,0 +1,480 @@
+header{
+    #frontpage_header{
+        position: sticky;
+        top: 30px;
+        left: 0;
+        width: 100%;
+        z-index: 5;
+        background-color: transparent;
+        .header_wrapper{
+            padding: 0 16px 0 38px;
+            .home_url{
+                margin-top: 15px;
+            }
+        }
+    }
+    #frontpage_header,
+    #burger_menu{
+        .header_right,
+        .hamburger{
+            .btn{
+                margin-left: 18px;
+            }
+        }
+        .hamburger{
+            position: relative;
+            top: 0;
+            right: 0;
+            display: block;
+            height: auto;
+            padding: 20px;
+            .hamburger-box{
+                display: block;
+                width: 12px;
+                height: 12px;
+            }
+            .hamburger-inner,
+            .hamburger-inner:before,
+            .hamburger-inner:after{
+                width: 12px;
+                height: 2px;
+                border-radius: 0;
+            }
+            .hamburger-inner:before{
+                top: -5px;
+            }
+            .hamburger-inner:after{
+                bottom: -5px;
+            }
+            &.hamburger--squeeze.is-active .hamburger-inner{
+                &:before{
+                    top: 0;
+                }
+                &:after{
+                    bottom: 0;
+                }
+            }
+        }
+    }
+    #burger_menu{
+        position: fixed;
+        top: 0;
+        left: 100%;
+        width: 380px;
+        height: 100%;
+        transform: translateX(0);
+        background-color: $lightBlue;
+        transition: transform 0.3s ease-in-out;
+        z-index: 5;
+        .header_wrapper{
+            padding: 0 16px;
+            overflow-y: auto;
+            .header_menu_container{
+                padding: 30px 0 0;
+                .header_menu{
+                    .header_center{
+                        padding: 24px 0;
+                        @extend %fnt-s13;
+                        letter-spacing: 0.27px;
+                        line-height: 32px;
+                        text-transform: uppercase;
+                        text-align: center;
+                        a{
+                            color: $black;
+                            text-decoration: none;
+                            &:hover{
+                                color: $black;
+                            }
+                        }
+                        .newsletter{
+                            display: inline-block;
+                            margin-top: 32px;
+                            cursor: pointer;
+                        }
+                        ul{
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            margin: 0;
+                            padding: 0;
+                            list-style: none;
+                            li{
+                                position: relative;
+                                margin: 0;
+                                padding: 0;
+                                ul{
+                                    display: none;
+                                    position: absolute;
+                                    top: 50%;
+                                    right: 100%;
+                                    padding: 6px 10px 8px 8px;
+                                    transform: translateY(-50%);
+                                    background-color: $black;
+                                    li{
+                                        position: relative;
+                                        margin-bottom: 6px;
+                                        @extend %fnt-s14;
+                                        white-space: nowrap;
+                                        a{
+                                            color: $white;
+                                            &:hover{
+                                                color: $white;
+                                            }
+                                        }
+                                        &:last-child{
+                                            margin-bottom: 0;
+                                        }
+                                    }
+                                    &:before{
+                                        content: "";
+                                        position: absolute;
+                                        top: 50%;
+                                        right: -4px;
+                                        display: block;
+                                        width: 8px;
+                                        height: 8px;
+                                        background-color: $black;
+                                        transform: translateY(-50%) rotate(45deg);
+                                    }
+                                }
+                                &.menu-item-has-children{
+                                    padding: 0 10px;
+                                }
+                                &:hover{
+                                    ul{
+                                        display: block;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .header_bottom{
+                        padding-bottom: 16px;
+                        .other_restorants_link{
+                            margin-bottom: 36px;
+                        }
+                    }
+                }
+            }
+        }
+     
+        .hamburger{
+            position: absolute;
+            top: 30px;
+            right: 16px;
+            .hamburger-inner,
+            .hamburger-inner:before,
+            .hamburger-inner:after{
+                background-color: $black;
+            }
+            &.rotate{
+                .hamburger-inner{
+                    transform: rotate(45deg);
+                    &:before{
+                        display: none;
+                    }
+                    &:after{
+                        bottom: 0;
+                        transform: rotate(-90deg);
+                    }
+                }
+                &:hover{
+                    .hamburger-box{
+                        -webkit-animation: spin 0.3s linear;
+                        -moz-animation: spin 0.3s linear;
+                        animation: spin 0.3s linear;
+                    }
+                }
+            }
+        }
+    }
+    .language_switcher{
+        ul{
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            li{
+                margin: 0 8px 0 0;
+                padding: 0;
+                @extend %fnt-s14;
+                line-height: 35px;
+                a{
+                    position: relative;
+                    display: inline-block;
+                    color: $black;
+                    text-decoration: none;
+                    &:before{
+                        content: "";
+                        position: absolute;
+                        bottom: 2px;
+                        left: 0;
+                        right: 0;
+                        display: block;
+                        width: 5px;
+                        height: 5px;
+                        margin: 0 auto;
+                        background-color: $black;
+                        transform: rotate(45deg);
+                        transition: opacity 0.15s linear;
+                        opacity: 0;
+                    }
+                    &:hover{
+                        color: $black;
+                        &:before{
+                            opacity: 1;
+                        }
+                    }
+                }
+                &.wpml-ls-current-language a:before{
+                    opacity: 1;
+                }    
+                &:last-child{
+                    margin: 0;
+                }
+            }
+        }
+    }
+    #page_header,
+    #header_scroll{
+        position: absolute;
+        top: 30px;
+        left: 0;
+        width: 100%;
+        z-index: 5;
+        .header_wrapper{
+            padding: 0 84px 0 38px;
+            .home_url{
+                margin-top: 15px;
+                margin-right: 46px;
+            }
+            .header_menu{
+                margin-top: 10px;
+                margin-right: 24px;
+                & > ul > li{
+                    & > a{
+                        &:before{
+                            content: "";
+                            position: absolute;
+                            bottom: 2px;
+                            left: 0;
+                            right: 0;
+                            display: block;
+                            width: 5px;
+                            height: 5px;
+                            margin: 0 auto;
+                            background-color: $black;
+                            transform: rotate(45deg);
+                            transition: opacity 0.15s linear;
+                            opacity: 0;
+                        }
+                    }
+                    & > a:hover,
+                    &.current-menu-item > a,
+                    &.current-page-parent > a{
+                        &:before{
+                            opacity: 1;
+                        }
+                    }
+                }
+                ul{
+                    display: flex;
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    li{
+                        position: relative;
+                        margin: 0 28px 0 0;
+                        padding: 0;
+                        @extend %fnt-s14;
+                        line-height: 35px;
+                        text-transform: uppercase;
+                        a{
+                            display: inline-block;
+                            position: relative;
+                            color: $black;
+                            text-decoration: none;
+                            &:hover{
+                                color: $black;
+                            }
+                        }
+                        ul{
+                            display: none;
+                            position: absolute;
+                            top: 100%;
+                            left: -10px;
+                            padding: 6px 22px 8px 8px;
+                            background-color: $black;
+                            transform: translateY(-3px);
+                            li{
+                                position: relative;
+                                margin-right: 0;
+                                margin-bottom: 6px;
+                                line-height: 20px;
+                                white-space: nowrap;
+                                a{
+                                    position: relative;
+                                    color: $white;
+                                    &:after{
+                                        content: "";
+                                        position: absolute;
+                                        top: 4px;
+                                        left: 100%;
+                                        display: block;
+                                        width: 5px;
+                                        height: 8px;
+                                        margin-left: 10px;
+                                        border: 1px solid $white;
+                                        border-width: 0 1px 1px 0;
+                                        transform: rotate(45deg);
+                                        opacity: 0;
+                                        transition: opacity 0.15s linear;
+                                    }
+                                    &:hover{
+                                        color: $white;
+                                    }
+                                }
+                                &.current-menu-item a,
+                                a:hover{
+                                    &:after{
+                                        opacity: 1;
+                                    }
+                                }
+                                &:last-child{
+                                    margin-bottom: 0;
+                                }
+                            }
+                            &:before{
+                                content: "";
+                                position: absolute;
+                                top: 0;
+                                left: 30px;
+                                display: block;
+                                width: 8px;
+                                height: 8px;
+                                background-color: $black;
+                                transform: translateY(-50%) rotate(45deg);
+                            }
+                        }
+                        &:last-child{
+                            margin-right: 0;
+                        }
+                        &:hover{
+                            ul{
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .language_switcher{
+            margin-right: 32px;
+        }
+    }
+    #header_scroll{
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 5;
+        background-color: $white;
+        transition: background-color 0.15s linear;
+        .header_wrapper{
+            padding-top: 13px;
+            padding-bottom: 13px;
+            .home_url{
+                position: relative;
+                margin-top: 0;
+                margin-right: 110px;
+                img{
+                    transition: opacity 0.15s linear;
+                }
+                .white{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    opacity: 0;
+                }
+            }
+            .header_menu{
+                margin-top: 0;
+                & > ul > li > a{
+                    transition: color 0.15s linear;
+                }
+            }
+            .language_switcher ul li a{
+                transition: color 0.15s linear;
+                &:before{
+                    transition: opacity 0.15s linear, background-color 0.15s linear;
+                }
+            }
+        }
+        &.black{
+            background-color: $black;
+            .header_wrapper{
+                .home_url{
+                    img{
+                        opacity: 0;
+                    }
+                    .white{
+                        opacity: 1;
+                    }
+                }
+                .header_menu > ul > li > a{
+                    color: $white;
+                }
+            }
+            .language_switcher ul li a{
+                color: $white;
+                &:before{
+                    background-color: $white;
+                }
+            }
+            .reservation_link{
+                color: $white;
+                background: $black;
+                border: 1px solid $white;
+                &:hover{
+                    color: $white;
+                    background: $darkGrayBtn;
+                    border-color: $white;
+                }
+            }
+            .reservation_link1{
+                color: $white;
+                background: $black;
+                border: 1px solid $white;
+                &:hover{
+                    color: $white;
+                    background: $darkGrayBtn;
+                    border-color: $white;
+                }
+            }
+        }
+    }
+}
+[lang="et"]{
+    header{
+        #burger_menu{
+            width: 500px;
+        }
+    }
+}
+[lang="ru-RU"]{
+    header{
+        #burger_menu{
+            width: 550px;
+        }
+        #page_header,
+        #header_scroll{
+            .header_wrapper .header_menu ul li{
+                font-size: 12px;
+                margin-right: 20px;
+            }
+        }
+    }
+}

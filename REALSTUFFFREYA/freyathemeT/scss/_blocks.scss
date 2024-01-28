@@ -1,0 +1,44 @@
+/* Text Columns Block */
+.text-columns-block{
+    font-weight: normal;
+    line-height: 30px;
+    margin-bottom: 80px;
+    .black-rect{
+        width: 12px;
+        height: 12px;
+        margin: 0 auto 70px;
+        background-color: $black;
+        transform: rotate(45deg);
+    }
+    .btn.white{
+        margin-top: 30px;
+    }
+}
+body.home .text-columns-block{
+    font-weight: 500;
+    line-height: 35px;
+    text-transform: uppercase;
+}
+
+/* Content Image Block */
+.content-image-block{
+    margin-bottom: 110px;
+}
+body.home .content-image-block{
+    padding-top: 32px;
+}
+
+/* Text Button Block */
+.text-button-block{
+    margin-bottom: 160px;
+}
+body.home .text-button-block{
+    font-weight: 500;
+    line-height: 33px;
+    text-transform: none;
+    text-align: left;
+    .text{
+        max-width: 800px;
+        margin: 0 auto 56px;
+    }
+}
